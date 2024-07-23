@@ -39,13 +39,16 @@
 
 .post p {
     color: var(--text-color);
-    font-size: 0.5rem;
+    font-size: 0.7rem;
     font-weight: 500;
 
 }
 
+.left{
+    text-align: end;
+}
 .left .text {
-    font-size: 0.4rem;
+    font-size: 0.5rem;
     color: #5c5c5c;
 }
 
@@ -62,8 +65,8 @@
 }
 
 i{
-    padding: 0 0.2rem;
-    font-size: 0.8rem;
+    padding: 0 0.4rem;
+    font-size: 1rem;
     cursor: pointer;
 }
 
@@ -116,6 +119,7 @@ input{
     margin: 0.5rem 0;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 0.15rem;
 
 }

@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './bottombar.component.css'
 })
 export class BottombarComponent {
-  isAdd:boolean=false
+  isAdd:boolean=true
 
   handleIsAdd=():void=>{
     this.isAdd=!this.isAdd

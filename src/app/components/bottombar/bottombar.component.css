@@ -64,7 +64,7 @@ span{
     position: absolute;
     top: -25%;
     transform: translateY(-100%);
-    width:6rem;
+    width:7rem;
     height: 7rem;
     padding: 0.5rem;
     display: flex;
@@ -73,7 +73,7 @@ span{
     justify-content: space-between;
     backdrop-filter: blur(15px);
     transition: opacity 0.3s ease-in-out;
-    background-color: rgba(0, 0, 0, 0.138);
+    background-color: rgba(53, 53, 53, 0.712);
     border-radius: 1rem;
 
 }
@@ -84,8 +84,8 @@ span{
     text-align: center;
     padding: 0.3rem 0.2rem;
     font-size: 0.75rem;
-    font-weight: 500;
-    color: rgb(218, 218, 218);
+    font-weight: 600;
+    color: rgb(231, 231, 231);
     cursor: pointer;
     transition: background-color 0.2s ease-in-out ;
     border-radius: 0.4rem;
