@@ -1,0 +1,121 @@
+.posts {
+    padding: 0.5rem;
+    margin: 4rem 0;
+}
+
+.posts .head {
+    width: 100%;
+    display: inline-flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.posts .head img {
+    width: 2rem;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.head .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile p {
+    padding: 0.3rem 0;
+    font-size: 0.6rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.post img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.post p {
+    color: var(--text-color);
+    font-size: 0.5rem;
+    font-weight: 500;
+
+}
+
+.left .text {
+    font-size: 0.4rem;
+    color: #5c5c5c;
+}
+
+.icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icons .rigth{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+i{
+    padding: 0 0.2rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.comments{
+    margin-top: 0.7rem;
+    padding: 0.3rem;
+    background-color: rgba(223, 223, 223, 0.637);
+    border-radius: 1rem;
+}
+.field {
+    padding: 0.5rem 0.7rem; 
+    width: 100%;
+    background: #ffffff;
+    border-radius: 0.8rem;
+}
+
+.field i{
+    font-size: 1rem;
+}
+input{
+    height: 1.5rem;
+    padding: 0 8rem 0 0.3rem ;
+    background-color: none;
+    border: none;
+    overflow: hidden;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    background-color: transparent;
+
+}
+
+.field input::placeholder{
+    font-size: 0.5rem;
+}
+.field input:focus{
+    outline: none;
+}
+
+.field .icons .rigth{
+    padding:0.2rem;
+}
+
+.field .icons .rigth i{
+    font-size: 0.8rem;
+}
+
+ .comment_comment{
+    border-radius: 1rem;
+    margin: 0 auto;
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    padding: 0.15rem;
+
+}

@@ -1,0 +1,37 @@
+<nav class="bottombar">
+
+    <div class="menu_item ">
+        <i class="fa-regular fa-comments">
+            <span>1</span>
+        </i>
+
+       
+    </div>
+    <div class="menu_item">
+        <i class="fa-solid fa-house"></i>
+        
+    </div>
+
+
+    <div class="menu_item">
+        <i class="fa-solid fa-plus" (click)="handleIsAdd()"></i>
+        
+        <div class="add_options" *ngIf="isAdd">
+            <p>Story</p>
+            <p>Photo Share</p>
+            <p>Text Share</p>
+        </div>
+    </div>
+
+    <div class="menu_item">
+        <i class="fa-regular fa-bell active">
+            <span>4</span>
+        </i>
+        
+    </div>
+
+    <div class="menu_item">
+        <i class="fa-regular fa-user"></i>
+        
+    </div>
+</nav>

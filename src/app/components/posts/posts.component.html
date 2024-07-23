@@ -1,0 +1,125 @@
+<div class="posts shadow-box">
+    <div class="head">
+        <div class="profile">
+            <img src="../../assets/profile_picture_maker_before.webp" alt="profile_picture">
+            <p>username</p>
+        </div>
+        <div class="left">
+            <i class="fa-solid fa-ellipsis"></i>
+            <p class="text">12:00pm</p>
+        </div>
+    </div>
+    <div class="post">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta, non.</p>
+        <div class="post_description">
+            <img class="rounded-border" src="../../assets/template_3.jpg"
+                alt="post_image">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo laudantium quibusdam quas minima? Saepe
+                quas fugiat autem, a delectus enim pariatur consectetur non natus sint sunt porro ab repudiandae totam.
+            </p>
+        </div>
+        <div class="icons">
+            <div class="rigth">
+
+                <i [ngClass]="{ 'fa-solid': isLikePost, 'fa-regular': !isLikePost }" class="fa-heart"
+                    (click)="handleLikePost()"></i>
+
+                <i class="fa-regular fa-comment" (click)="handleComment()"></i>
+                <i class="fa-solid fa-arrow-up-from-bracket"></i>
+            </div>
+            <div class="bookmark">
+                <i [ngClass]="{ 'fa-solid': isBookmark, 'fa-regular': !isBookmark }" class="fa-bookmark"
+                    (click)="handleBookmark()"></i>
+
+            </div>
+        </div>
+        <div class="comments ">
+            <div class="field comment_comment" *ngIf="isComment">
+                <input type="text" placeholder="yorum yaz...">
+                <i class="fa-solid fa-location-arrow"></i>
+            </div>
+
+            <div class="field">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, quisquam!</p>
+                <div class="icons">
+                    <div class="rigth">
+                        <i [ngClass]="{ 'fa-solid': isLikeComment, 'fa-regular': !isLikeComment }" class="fa-heart"
+                            (click)="handleLikeComment()"></i>
+
+                        <i class="fa-regular fa-comment" (click)="handleCommentPost()"></i>
+                    </div>
+                </div>
+               
+                <div class="comment_comment" *ngIf="isCommentPost">
+                    <input type="text" placeholder="yorum yaz...">
+                    <i class="fa-solid fa-location-arrow"></i>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="posts shadow-box">
+    <div class="head">
+        <div class="profile">
+            <img src="../../assets/profile_picture_maker_before.webp" alt="profile_picture">
+            <p>username</p>
+        </div>
+        <div class="left">
+            <i class="fa-solid fa-ellipsis"></i>
+            <p class="text">12:00pm</p>
+        </div>
+    </div>
+    <div class="post">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta, non.</p>
+        <div class="post_description">
+            <img class="rounded-border" src="../../assets/profile_picture_maker_before.webp"
+                alt="post_image">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo laudantium quibusdam quas minima? Saepe
+                quas fugiat autem, a delectus enim pariatur consectetur non natus sint sunt porro ab repudiandae totam.
+            </p>
+        </div>
+        <div class="icons">
+            <div class="rigth">
+
+                <i [ngClass]="{ 'fa-solid': isLikePost, 'fa-regular': !isLikePost }" class="fa-heart"
+                    (click)="handleLikePost()"></i>
+
+                <i class="fa-regular fa-comment" (click)="handleComment()"></i>
+                <i class="fa-solid fa-arrow-up-from-bracket"></i>
+            </div>
+            <div class="bookmark">
+                <i [ngClass]="{ 'fa-solid': isBookmark, 'fa-regular': !isBookmark }" class="fa-bookmark"
+                    (click)="handleBookmark()"></i>
+
+            </div>
+        </div>
+        <div class="comments ">
+            <div class="field comment_comment" *ngIf="isComment">
+                <input type="text" placeholder="yorum yaz...">
+                <i class="fa-solid fa-location-arrow"></i>
+            </div>
+
+            <div class="field">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, quisquam!</p>
+                <div class="icons">
+                    <div class="rigth">
+                        <i [ngClass]="{ 'fa-solid': isLikeComment, 'fa-regular': !isLikeComment }" class="fa-heart"
+                            (click)="handleLikeComment()"></i>
+
+                        <i class="fa-regular fa-comment" (click)="handleCommentPost()"></i>
+                    </div>
+                </div>
+               
+                <div class="comment_comment" *ngIf="isCommentPost">
+                    <input type="text" placeholder="yorum yaz...">
+                    <i class="fa-solid fa-location-arrow"></i>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
