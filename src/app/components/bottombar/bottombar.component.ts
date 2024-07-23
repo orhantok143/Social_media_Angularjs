@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import {Router } from '@angular/router';
 
 @Component({
   selector: 'app-bottombar',
@@ -9,10 +10,17 @@ import { Component } from '@angular/core';
   styleUrl: './bottombar.component.css'
 })
 export class BottombarComponent {
-  isAdd:boolean=true
+  isAdd:boolean=false
+
+  constructor( private router :Router ){}
+
 
   handleIsAdd=():void=>{
     this.isAdd=!this.isAdd
+  }
+
+  toProfile=():void=>{
+    this.router.navigate(['/profile'])
   }
 
 

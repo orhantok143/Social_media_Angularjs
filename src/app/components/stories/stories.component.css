@@ -40,7 +40,7 @@
 
 .add_user{
     position: relative;
-
+    z-index: -1;
 }
 
 
@@ -53,4 +53,5 @@
     padding: 0.1rem;
     color: #f0f0f0;
     border: 2px solid #f0f0f0;
+  
 }

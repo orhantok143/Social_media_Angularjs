@@ -1,0 +1,74 @@
+.top-profile{
+    max-width: 480px;
+    width: 100%;
+    padding: 1rem;
+    margin: 0 auto;
+}
+.top-profile .profile-head{
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+h3{
+    margin-top: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.76);
+}
+
+p{
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: rgb(128, 128, 128);
+
+}
+.top-profile .profile-head .profile-img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgb(136, 136, 136);
+
+}
+.profile-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.profile-detail{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 0.8rem;
+
+}
+.profile-detail .profile-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+}
+.profile-detail .profile-info h3{
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.788);
+}
+.btn{
+    width: 100%;
+    background: #220070;
+    font-size: 1rem;
+    font-weight: 600;
+}

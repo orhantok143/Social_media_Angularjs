@@ -1,25 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
-import { LayoutComponent } from './pages/layout/layout.component';
 import { MainComponent } from './components/main/main.component';
+import { LayoutComponent } from './pages/layout/layout.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { RouteConfigLoadEnd, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports:  [CommonModule,RouterOutlet, MainComponent, LayoutComponent,MatIconModule] ,
+  imports: [
+    CommonModule,
+    MainComponent,
+    LayoutComponent,
+    ProfileComponent,
+    RouterOutlet
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
-
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
- 
-  constructor() {
-    
-  }
-ngOnInit(): void {
-  
-}
-
+  constructor() {}
+  ngOnInit(): void {}
 }
