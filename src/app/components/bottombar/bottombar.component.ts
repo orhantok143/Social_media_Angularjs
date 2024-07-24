@@ -11,6 +11,7 @@ import {Router } from '@angular/router';
 })
 export class BottombarComponent {
   isAdd:boolean=false
+  activeItem:string= "home"
 
   constructor( private router :Router ){}
 
@@ -21,6 +22,10 @@ export class BottombarComponent {
 
   toProfile=():void=>{
     this.router.navigate(['/profile'])
+  }
+
+  handleClickMenu=():void=>{
+    this.router.navigate(['/home'])
   }
 
 
