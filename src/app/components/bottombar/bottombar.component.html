@@ -1,21 +1,21 @@
 <nav class="bottombar">
 
-    <div class="menu_item">
+    <div class="menu_item" routerLink="/chat">
         <i class="fa-regular fa-comments">
             <span>1</span>
         </i>
 
-       
+
     </div>
-    <div class="menu_item" (click)="handleClickMenu()">
+    <div class="menu_item" routerLink="/home">
         <i class="fa-solid fa-house"></i>
-        
+
     </div>
 
 
     <div class="menu_item">
         <i class="fa-solid fa-plus" (click)="handleIsAdd()"></i>
-        
+
         <div class="add_options" *ngIf="isAdd">
             <p>Story</p>
             <p>Photo Share</p>
@@ -27,11 +27,11 @@
         <i class="fa-regular fa-bell active">
             <span>4</span>
         </i>
-        
+
     </div>
 
-    <div class="menu_item" (click)="toProfile()">
+    <div class="menu_item" routerLink="/profile">
         <i class="fa-regular fa-user"></i>
-        
+
     </div>
 </nav>

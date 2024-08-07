@@ -5,6 +5,7 @@
     justify-content: center;
     border-radius: 1rem;
     position: relative;
+    margin-bottom: 5rem;
 
 }
 
@@ -41,15 +42,18 @@
 
 .profile_body_content {
     display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Her satırda iki sütun */
-  gap: 4px; /* Öğeler arasındaki boşluk */
+    grid-template-columns: repeat(2, 1fr);
+    /* Her satırda iki sütun */
+    gap: 4px;
+    /* Öğeler arasındaki boşluk */
 }
 
 .profile_body_content .item {
     display: flex;
-    align-items:flex-end;
+    align-items: stretch;
     justify-content: center;
-    overflow: hidden; /* Taşmaları gizle */
+    overflow: hidden;
+    /* Taşmaları gizle */
 }
 
 .profile_body_content .item img {

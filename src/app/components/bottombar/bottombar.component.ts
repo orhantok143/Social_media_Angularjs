@@ -1,32 +1,29 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import {Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-bottombar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './bottombar.component.html',
-  styleUrl: './bottombar.component.css'
+  styleUrl: './bottombar.component.css',
 })
 export class BottombarComponent {
-  isAdd:boolean=false
-  activeItem:string= "home"
+  isAdd: boolean = false;
+  activeItem: string = 'home';
 
-  constructor( private router :Router ){}
+  constructor(private router: Router) {}
 
+  handleIsAdd = (): void => {
+    this.isAdd = !this.isAdd;
+  };
 
-  handleIsAdd=():void=>{
-    this.isAdd=!this.isAdd
-  }
+  toProfile = (): void => {
+    this.router.navigate(['/profile']);
+  };
 
-  toProfile=():void=>{
-    this.router.navigate(['/profile'])
-  }
-
-  handleClickMenu=():void=>{
-    this.router.navigate(['/home'])
-  }
-
-
+  handleClickMenu = (): void => {
+    this.router.navigate(['/home']);
+  };
 }
