@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-chatbody',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './chatbody.component.html',
-  styleUrl: './chatbody.component.css'
+  styleUrl: './chatbody.component.css',
 })
-export class ChatbodyComponent {
-
-}
+export class ChatbodyComponent {}
