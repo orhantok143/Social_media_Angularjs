@@ -101,6 +101,7 @@ h2 {
 .user_text .type {
     font-size: 0.5rem;
     color: #767676;
+    font-weight:400;
 }
 
 .date {
