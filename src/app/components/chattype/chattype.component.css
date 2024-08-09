@@ -1,0 +1,218 @@
+.full {
+    background-color: #6A5BC2;
+}
+
+.typing .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1rem;
+    height: 10vh;
+    color: aliceblue;
+}
+
+.top i {
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.online {
+    text-align: center;
+
+}
+
+.online .name {
+    font-size: 0.8rem;
+    font-weight: 400;
+    padding: 0.5rem;
+    padding-bottom: 0;
+}
+
+.online .sing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0.5rem;
+    padding-top: 0;
+}
+
+.sing span {
+    padding: 3px;
+    margin-right: 0.3rem;
+    border-radius: 50%;
+    background-color: rgb(81, 255, 0);
+}
+
+.sing p {
+    font-size: 0.5rem;
+    font-weight: 400;
+
+}
+
+
+
+.typing .text {
+    height: calc(100vh - 10vh - 50px);
+    background-color: rgb(255, 255, 255);
+    padding: 1rem;
+    border-radius: 2.5rem 2.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+
+}
+
+span {
+    font-size: 0.5rem;
+    text-align: end;
+}
+
+.profile {
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+}
+
+.profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile::after {
+    content: "";
+    height: 12px;
+    width: 12px;
+    background-color: rgb(0, 255, 4);
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    border-radius: 50%;
+    border: 2px solid whitesmoke;
+    z-index: 2;
+}
+
+.you {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    width: 70%;
+}
+
+
+.you .chat {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.chat .typetext {
+    font-size: 0.6rem;
+    padding: 0.5rem;
+    border-radius: 0.8rem;
+    background-color: aliceblue;
+    color: rgb(74, 74, 74);
+    position: relative;
+}
+
+.typetext i {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0.3rem;
+    color: #6A5BC2;
+    font-size: 0.65rem;
+}
+
+.chat label {
+    font-size: 0.48rem;
+    padding: 0.3rem;
+    color: rgb(121, 121, 121);
+}
+
+.me {
+    width: 60%;
+    align-self: self-end;
+    font-size: 0.48rem;
+    padding: 0.5rem;
+    color: rgb(121, 121, 121);
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
+}
+
+.me p {
+    font-size: 0.6rem;
+    padding: 0.5rem;
+    border-radius: 0.8rem;
+    background-color: #6A5BC2;
+    color: aliceblue;
+    position: relative;
+}
+
+.me p i {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0.4rem;
+    color: rgb(0, 250, 229);
+    font-size: 0.65rem;
+}
+
+.me label {
+    font-size: 0.48rem;
+    padding: 0.3rem;
+    color: rgb(121, 121, 121);
+}
+
+.message {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.message i {
+    color: #6A5BC2;
+    padding: 0 0.9rem;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.message .input {
+    background-color: rgb(241, 241, 241);
+    padding: 0.3rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+
+.input input {
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    background: transparent;
+    text-wrap: wrap;
+    color: rgb(37, 37, 37);
+    font-size: 0.75rem;
+    letter-spacing: 0.8px;
+    font-weight: 500;
+
+}
+
+.input input::placeholder {
+    color: rgba(0, 0, 0, 0.646);
+    font-size: 0.7rem;
+    font-weight: 500;
+}
