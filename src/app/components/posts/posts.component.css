@@ -1,3 +1,7 @@
+
+p{
+    letter-spacing: 0.3px;
+}
 .posts {
     padding: 0.5rem;
     margin: 4rem 0;
@@ -28,7 +32,7 @@
 .profile p {
     padding: 0.3rem 0;
     font-size: 0.6rem;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--text-color);
 }
 
@@ -40,7 +44,7 @@
 .post p {
     color: var(--text-color);
     font-size: 0.7rem;
-    font-weight: 500;
+    font-weight: 400;
 
 }
 
