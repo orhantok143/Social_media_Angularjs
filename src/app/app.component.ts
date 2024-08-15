@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { MainComponent } from './components/main/main.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { ProfileComponent } from './pages/profile/profile.component';
-import { RouteConfigLoadEnd, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,8 @@ import { RouteConfigLoadEnd, RouterOutlet } from '@angular/router';
     LayoutComponent,
     ProfileComponent,
     RouterOutlet,
+    FormsModule,
+    ReactiveFormsModule
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],

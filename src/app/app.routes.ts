@@ -1,17 +1,15 @@
 import { Routes } from '@angular/router';
 import { provideRouter } from '@angular/router';
-import { ProfileComponent } from './pages/profile/profile.component';
-import { LayoutComponent } from './pages/layout/layout.component';
-import { ChatComponent } from './pages/chat/chat.component';
-import { ChattypeComponent } from './components/chattype/chattype.component';
 
 export const routes: Routes = [
-  { path: 'home', component: LayoutComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'chat', component: ChatComponent },
-  { path: 'message', component: ChattypeComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', redirectTo: '/home' },
+  { path: '',    loadComponent: () => import('./components/login/login.component').then(m => m.LoginComponent)},
+  { path: 'register', loadComponent:()=>import('./components/singup/singup.component').then(m=>m.SingupComponent) },
+  { path: 'home', loadComponent:()=>import('./pages/layout/layout.component').then(m=>m.LayoutComponent) },
+  { path: 'profile', loadComponent:()=>import('./pages/profile/profile.component').then(m=>m.ProfileComponent)},
+  { path: 'chat', loadComponent:()=>import('./pages/chat/chat.component').then(m=>m.ChatComponent)},
+  { path: 'message', loadComponent:()=>import('./components/chattype/chattype.component').then(m=>m.ChattypeComponent)},
+  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '**', redirectTo: '/' },
 ];
 
 export const AppRoutingModule = provideRouter(routes);

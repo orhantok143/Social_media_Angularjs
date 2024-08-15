@@ -1,0 +1,26 @@
+<section>
+  <h2>Register</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+   
+      
+      <input id="name" formControlName="name" placeholder="Name">
+   
+     
+      <input id="username" formControlName="username" placeholder="Username">
+   
+   
+      <input id="email" formControlName="email" placeholder="Email" type="email">
+   
+    
+      <input id="password" formControlName="password" placeholder="Password" type="password">
+   
+   
+      <input id="confirmPassword" formControlName="confirmPassword" placeholder="Confirm Password" type="password">
+    
+    <button type="submit" id="btn">Kaydol</button>
+  </form>
+  <div class="isSignup">
+    <p>Zaten bir hesabın var mı?</p>
+    <a href="/login">Giriş Yap</a>
+  </div>
+</section>

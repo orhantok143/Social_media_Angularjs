@@ -4,8 +4,15 @@
     align-items: center;
     justify-content: center;
     border-radius: 1rem;
-    position: relative;
     margin-bottom: 5rem;
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
 
 }
 
