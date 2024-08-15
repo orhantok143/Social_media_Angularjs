@@ -1,5 +1,7 @@
+import { getAllPost } from './../../store/actions/post.actions';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-posts',
@@ -14,8 +16,13 @@ export class PostsComponent implements OnInit {
   isBookmark:boolean=false
   isComment:boolean=false
   isCommentPost:boolean=false
+  allPost!:any
 
-  constructor() {}
+  constructor( private store:Store ) {}
+
+
+
+   
 handleLikePost = ():void=>{
   this.isLikePost=!this.isLikePost
 }
@@ -37,6 +44,10 @@ handleCommentPost=():void=>{
 
 ngOnInit(): void {
   
+  
+    this.allPost = this.store.dispatch(getAllPost())
+    console.log(this.allPost);
+  return this.allPost
 }
 
 }

@@ -3,12 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { UserModel } from '../../models/user.model';
 import { baseUrl } from '../baseUrl';
+import { Config } from '../config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private config:Config) {}
 
   register(user:any): Observable<UserModel> {
     debugger
@@ -19,7 +20,7 @@ export class ApiService {
   }
 
   getAllUser():Observable<UserModel[]>{
-    return this.http.get<UserModel[]>(`${baseUrl}/user`)
+    return this.http.get<UserModel[]>(`${baseUrl}/user`,{headers:this.config.headers})
   }
 
 }

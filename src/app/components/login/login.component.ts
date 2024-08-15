@@ -1,5 +1,5 @@
 import { login } from './../../store/actions/auth.actions';
-import { COMPILER_OPTIONS, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AuthState } from '../../store/reducers/auth.reducer';
 import {
@@ -12,6 +12,7 @@ import {
 import { CommonModule } from '@angular/common';
 import { selectToken } from '../../store/selectors/auth.selectors';
 import { AuthService } from '../../services/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -22,9 +23,12 @@ import { AuthService } from '../../services/auth/auth.service';
 })
 export class LoginComponent {
   loginForm!: FormGroup;
-  token$: any = null;
 
-  constructor(private fb: FormBuilder, private store: Store<AuthState>,private authService:AuthService) {
+  constructor(private fb: FormBuilder,
+              private store: Store<AuthState>,
+              private authService:AuthService,
+              private router:Router
+            ) {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
@@ -35,9 +39,10 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       this.store.dispatch(login(this.loginForm.value));
       this.store.select(selectToken).subscribe((token) => {
-        this.token$ = token;
+        
         this.authService.setToken(token)
-        console.log(this.token$);
+        this.router.navigate(['home'])
+        
       });
     } else {
       console.log('Form is not valid');

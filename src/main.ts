@@ -13,16 +13,21 @@ import { provideEffects } from '@ngrx/effects';
 import { AuthReducer } from './app/store/reducers/auth.reducer';
 import { AuthEffect } from './app/store/effects/auth.effects';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { PostReducer } from './app/store/reducers/post.reducer';
+import { PostEffect } from './app/store/effects/post.effects';
+import { Config } from './app/services/config';
 
 bootstrapApplication(AppComponent, {
   providers: [
     provideRouter(routes),
     importProvidersFrom(MatIconModule),
     provideAnimationsAsync(),
-    provideStore({user:UserReducer,auth:AuthReducer}),
-    provideEffects(UserEffects,AuthEffect),
+    provideStore({user:UserReducer,auth:AuthReducer,post:PostReducer}),
+    provideEffects([UserEffects,AuthEffect,PostEffect]),
     provideHttpClient(withFetch()),
-    provideStoreDevtools()
+    provideStoreDevtools(),
+    Config
+    
   ]
   
 }).catch(err => console.error(err));

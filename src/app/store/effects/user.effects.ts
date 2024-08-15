@@ -10,7 +10,7 @@ import { of } from 'rxjs';
 import { ApiService } from '../../services/api/api.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserEffects {
   constructor(private actions$: Actions, private userService: ApiService) {}
