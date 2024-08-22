@@ -1,25 +1,32 @@
 import { HttpInterceptorFn } from '@angular/common/http';
-import { HttpRequest, HttpHandlerFn, HttpEvent } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { AuthService } from '../services/auth/auth.service';
+import { inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 
-// AuthService'i Angular DI ile almak için enjekte etmeniz gerekiyor.
-// Fonksiyonel interceptor için DI yapılacak bir ortam kurmanız gerekebilir.
-// Bu durumda, doğrudan bir fonksiyon yerine, sınıf ile birlikte DI sağlayarak kullanmak daha mantıklı olabilir.
+export const authInterceptor: HttpInterceptorFn = (req, next) => {
+  const authService = inject(AuthService);
+  const router = inject(Router);
+  const token = authService.getToken();
 
-export function authInterceptor(authService: AuthService): HttpInterceptorFn {
-  return (req: HttpRequest<any>, next: HttpHandlerFn): Observable<HttpEvent<any>> => {
-    const token = authService.getToken();
+  let authReq = req;
 
-    if (token) {
-      const authReq = req.clone({
-        setHeaders: {
-          Authorization: `Bearer ${token}`
-        }
-      });
-      return next(authReq);
-    } else {
-      return next(req);
-    }
-  };
-}
+  if (token) {
+    authReq = req.clone({
+      setHeaders: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
+
+  return next(authReq).pipe(
+    catchError((error) => {
+      if (error.status === 401) {
+        authService.clearToken();
+        router.navigate(['/login']);
+      }
+      return throwError(() => error);
+    })
+  );
+};

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { UserModel } from '../../models/user.model';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { baseUrl } from '../baseUrl';
 
@@ -8,25 +8,35 @@ import { baseUrl } from '../baseUrl';
   providedIn: 'root',
 })
 export class AuthService {
-  token:any=null
+  private tokenSubject: BehaviorSubject<string | null>;
 
-constructor(private http:HttpClient ) {}
-  login(username: string, password: string):Observable<string>{
-    return this.http.post<string>(`${baseUrl}/auth/login`,{username,password})
-    
+  token$: Observable<string | null>;
+
+  constructor(private http: HttpClient) {
+    const storedToken = localStorage.getItem('authToken');
+    this.tokenSubject = new BehaviorSubject<string | null>(storedToken);
+    this.token$ = this.tokenSubject.asObservable();
   }
 
-  setToken(token: string): void {
-    this.token = token;
-    localStorage.setItem('authToken', token); // Token'ı localStorage'da saklayabilirsiniz
+  setToken(token: string) {
+    localStorage.setItem('authToken', token);
+    this.tokenSubject.next(token);
   }
 
   getToken(): string | null {
-    return this.token || localStorage.getItem('authToken');
+    return this.tokenSubject.value;
+  }
+
+  login(username: string, password: string): Observable<string> {
+    return this.http.post<string>(`${baseUrl}/auth/login`, { username, password }).pipe(
+      tap((token: string) => {
+        this.setToken(token);
+      })
+    );
   }
 
   clearToken(): void {
-    this.token = null;
     localStorage.removeItem('authToken');
+    this.tokenSubject.next(null);
   }
 }

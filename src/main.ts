@@ -8,14 +8,14 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideStore } from '@ngrx/store';
 import { UserReducer } from './app/store/reducers/user.reducer';
 import { UserEffects } from './app/store/effects/user.effects';
-import { provideHttpClient, withFetch } from '@angular/common/http';
+import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { provideEffects } from '@ngrx/effects';
 import { AuthReducer } from './app/store/reducers/auth.reducer';
 import { AuthEffect } from './app/store/effects/auth.effects';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { PostReducer } from './app/store/reducers/post.reducer';
 import { PostEffect } from './app/store/effects/post.effects';
-import { Config } from './app/services/config';
+import { authInterceptor } from './app/interceptors/http.interceptors';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -26,8 +26,7 @@ bootstrapApplication(AppComponent, {
     provideEffects([UserEffects,AuthEffect,PostEffect]),
     provideHttpClient(withFetch()),
     provideStoreDevtools(),
-    Config
-    
+    provideHttpClient(withInterceptors([authInterceptor])),
   ]
   
 }).catch(err => console.error(err));

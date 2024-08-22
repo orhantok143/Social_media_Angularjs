@@ -1,14 +1,12 @@
 <section>
-
     <h2>Register</h2>
-<form [formGroup]="loginForm" (ngSubmit)="login()"   >
-    <input type="text" formControlName="username"  placeholder="username">
-    <input type="password" formControlName="password" placeholder="parssword">
-    <button id="btn">Giriş Yap</button>
-</form>
-<div class="isSingup">
-
-<p>Bir hesabın yok mu?</p>
-<a href="/register">Kayıt Ol</a>
-</div>
+    <form [formGroup]="loginForm" (ngSubmit)="login()"   >
+        <input type="text" formControlName="username"  placeholder="username">
+        <input type="password" formControlName="password" placeholder="parssword">
+        <button id="btn" type="submit" >Giriş Yap</button>
+    </form>
+    <div class="isSingup">
+        <p>Bir hesabın yok mu?</p>
+        <a href="/register">Kayıt Ol</a>
+    </div>
 </section>

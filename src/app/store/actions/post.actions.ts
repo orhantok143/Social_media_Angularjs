@@ -36,7 +36,7 @@ export const getAllPostFailer = createAction(
 // Get One Post Actions
 export const getOnePost = createAction(
     '[Post] Get One Post',
-    props<{id:string}>()
+    props<{id:number}>()
 )
 
 export const getOnePostSuccess = createAction(
@@ -53,7 +53,7 @@ export const getOnePostFailer = createAction(
 // update Post Actions
 export const updatePost = createAction(
     '[Post] Update Post',
-    props<{id:string,post:PostModel}>()
+    props<{id:number,post:PostModel}>()
 )
 
 export const updatePostSuccess = createAction(
@@ -70,7 +70,7 @@ export const updatePostFailer = createAction(
 // Delete Post Actions
 export const deletePost = createAction(
     '[Post] Delete Post',
-    props<{id:string}>()
+    props<{id:number}>()
 )
 
 export const deletePostSuccess = createAction(

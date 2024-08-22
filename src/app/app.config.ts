@@ -6,7 +6,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideClientHydration(),
-    provideAnimationsAsync(),
+    provideAnimationsAsync()
    
   ],
 };

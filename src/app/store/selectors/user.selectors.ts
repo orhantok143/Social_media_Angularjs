@@ -10,7 +10,12 @@ export const selectUserError = createSelector(
   (state: UserState) => state.error
 );
 
-export const selectUser = createSelector(
+export const selectAllUser = createSelector(
   selectUserState,
-  (state: UserState) => state.user
+  (state: UserState) => state.users
 );
+
+export const selectOneUser= createSelector(
+  selectUserState,
+  (state:UserState)=>state.user
+)

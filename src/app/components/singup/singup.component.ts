@@ -1,4 +1,3 @@
-import { UserModel } from './../../models/user.model';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -6,8 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { UserState } from '../../store/reducers/user.reducer';
 import { userRegister } from '../../store/actions/user.actions';
-import { ApiService } from '../../services/api/api.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-singup',

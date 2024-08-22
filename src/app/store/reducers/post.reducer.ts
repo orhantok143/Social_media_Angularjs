@@ -14,7 +14,7 @@ export interface PostState{
 
 const initialState:PostState={
     posts:[],
-    post:{title:'',content:''},
+    post:{title:'',content:'',userId:0},
     loading:false,
     error:null
 }

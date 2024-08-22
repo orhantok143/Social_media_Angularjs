@@ -1,8 +1,10 @@
-<div class="posts shadow-box">
+<div *ngFor="let post of posts" class="posts shadow-box">
     <div class="head">
         <div class="profile">
             <img src="../../assets/profile_picture_maker_before.webp" alt="profile_picture">
-            <p>username</p>
+            <p *ngIf="users$[post.userId] | async as user">
+                {{ user.username }}
+              </p>
         </div>
         <div class="left">
             <i class="fa-solid fa-ellipsis"></i>
@@ -10,14 +12,12 @@
         </div>
     </div>
     <div class="post">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta, non.</p>
-        <div class="post_description">
-            <img class="rounded-border" src="../../assets/template_3.jpg"
+        <p> {{post.content}} </p>
+        <!-- <div class="post_description">
+            <img  class="rounded-border" src="../../assets/template_3.jpg"
                 alt="post_image">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo laudantium quibusdam quas minima? Saepe
-                quas fugiat autem, a delectus enim pariatur consectetur non natus sint sunt porro ab repudiandae totam.
-            </p>
-        </div>
+           <p> {{post.content}} </p>
+        </div> -->
         <div class="icons">
             <div class="rigth">
 
@@ -61,7 +61,7 @@
     </div>
 </div>
 
-<div class="posts shadow-box">
+<!-- <div class="posts shadow-box">
     <div class="head">
         <div class="profile">
             <img src="../../assets/profile_picture_maker_before.webp" alt="profile_picture">
@@ -122,4 +122,4 @@
 
         </div>
     </div>
-</div>
+</div> -->

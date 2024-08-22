@@ -1,5 +1,4 @@
-import { AuthService } from './../auth/auth.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PostModel } from '../../models/post.model';
@@ -10,37 +9,34 @@ import { Config } from '../config';
   providedIn: 'root'
 })
 export class PostService {
+  [x: string]: any;
   constructor(
     private http : HttpClient,
     private config:Config,
-    private authService:AuthService
   ) { 
-    
+  }
+  
+  
+  headers = this.config.getHeaders()
+
+
+  create(post:PostModel):Observable<PostModel>{  
+    return this.http.post<PostModel>(`${baseUrl}/post`,post)
   }
 
-
-  token = this.authService.getToken()
- 
-
-  create(post:PostModel):Observable<PostModel>{
-    
-    return this.http.post<PostModel>(`${baseUrl}/post`,post,{headers:this.config.headers})
+  getAllPost():Observable<PostModel[]>{ 
+    return this.http.get<PostModel[]>(`${baseUrl}/post`)
   }
 
-  getAllPost():Observable<PostModel[]>{
-   
-    return this.http.get<PostModel[]>(`${baseUrl}/post`,{headers:this.config.headers })
+  getOnePost(id:number):Observable<PostModel>{
+    return this.http.get<PostModel>(`${baseUrl}/post/${id}`)
   }
 
-  getOnePost(id:string):Observable<PostModel>{
-    return this.http.get<PostModel>(`${baseUrl}/post/${id}`,{headers:this.config.headers})
+  updatePost(id:number,post:PostModel):Observable<PostModel>{
+    return this.http.patch<PostModel>(`${baseUrl}/post/${id}`,post)
   }
 
-  updatePost(id:string,post:PostModel):Observable<PostModel>{
-    return this.http.patch<PostModel>(`${baseUrl}/post/${id}`,post,{headers:this.config.headers})
-  }
-
-  delete(id:string):Observable<PostModel>{
-    return this.http.delete<PostModel>(`${baseUrl}/post/${id}`,{headers:this.config.headers})
+  delete(id:number):Observable<PostModel>{
+    return this.http.delete<PostModel>(`${baseUrl}/post/${id}`)
   }
 }
